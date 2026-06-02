@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YiW Focal Personnel Evaluation Portal</title>
+    <style>
+        :root { --primary: #0d3b66; --secondary: #f4d35e; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+        .wrapper { max-width: 750px; margin: 0 auto; background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .branding { text-align: center; border-bottom: 4px solid var(--primary); padding-bottom: 15px; margin-bottom: 30px; }
+        .branding h1 { color: var(--primary); margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .section-header { background: var(--primary); color: #fff; padding: 12px 18px; border-radius: 6px; font-weight: 600; margin: 30px 0 15px 0; }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
+        label { display: block; font-weight: 600; margin-bottom: 6px; color: #444; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
+        .card { background: #fff; border: 1px solid #e1e4e8; padding: 20px; border-left: 5px solid var(--secondary); margin-bottom: 15px; border-radius: 4px; }
+        .radio-item { display: flex; align-items: center; margin-bottom: 10px; font-weight: 500; cursor: pointer; }
+        .radio-item input { width: auto; margin-right: 12px; transform: scale(1.1); }
+        .alert { background: #e3f2fd; border-left: 5px solid #1e88e5; padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14.5px; }
+        button { background: var(--primary); color: #fff; border: none; padding: 16px; font-size: 17px; font-weight: 700; width: 100%; border-radius: 6px; cursor: pointer; transition: 0.2s ease; margin-top: 20px; }
+        button:hover { background: #082542; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="branding">
+        <h1>Social Enterprise Ghana</h1>
+        <p style="color:#666; font-weight:500; margin:5px 0 0 0;">Youth-in-Work (YiW) Focal Personnel Evaluation</p>
+    </div>
+
+    <form id="evaluationForm">
+        <div class="section-header">Personnel Credentials</div>
+        <div class="input-row">
+            <div>
+                <label>Full Name</label>
+                <input type="text" id="personnel_name" required placeholder="e.g. Kwame Mensah">
+            </div>
+            <div>
+                <label>Official Email Address</label>
+                <input type="email" id="personnel_email" required placeholder="e.g. kwame@seghana.net">
+            </div>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>Assigned Regional Zone</label>
+            <select id="assigned_region" required>
+                <option value="">-- Choose Regional Location --</option>
+                <option value="Greater Accra">Greater Accra</option>
+                <option value="Ashanti">Ashanti</option>
+                <option value="Volta">Volta</option>
+                <option value="Northern">Northern</option>
+                <option value="Western">Western</option>
+                <option value="Eastern">Eastern</option>
+            </select>
+        </div>
+
+        <div class="section-header">Section A: Knowledge Verification Quiz</div>
+        
+        <div class="card">
+            <label>1. What is the overall target number of young people to be reached under the ACTIVATE Project?</label>
+            <div class="radio-item"><input type="radio" name="q1" value="10,000 to 15,000" required> A) 10,000 to 15,000</div>
+            <div class="radio-item"><input type="radio" name="q1" value="20,000 to 25,000"> B) 20,000 to 25,000</div>
+            <div class="radio-item"><input type="radio" name="q1" value="40,000 to 50,000"> C) 40,000 to 50,000</div>
+        </div>
+
+        <div class="card">
+            <label>2. According to guidelines, when does an ACTIVATE participant officially count as "Youth in Work" (YiW)?</label>
+            <div class="radio-item"><input type="radio" name="q2" value="Immediately after completing training" required> A) Immediately after completing training</div>
+            <div class="radio-item"><input type="radio" name="q2" value="As soon as they receive start-up packages"> B) As soon as they receive start-up packages</div>
+            <div class="radio-item"><input type="radio" name="q2" value="Only after they secure actual income from work"> C) Only after they secure actual income from work</div>
+        </div>
+
+        <div class="card">
+            <label>3. What is the specific target percentage for female inclusion under the ACTIVATE project?</label>
+            <div class="radio-item"><input type="radio" name="q3" value="50%" required> A) 50% Target</div>
+            <div class="radio-item"><input type="radio" name="q3" value="75%"> B) 75% Target</div>
+            <div class="radio-item"><input type="radio" name="q3" value="90%"> C) 90% Target</div>
+        </div>
+
+        <div class="card">
+            <label>4. Which Google Drive naming convention should a Regional Focal Person use?</label>
+            <div class="radio-item"><input type="radio" name="q4" value="DocumentType_Date_Name" required> A) DocumentType_Date_Name</div>
+            <div class="radio-item"><input type="radio" name="q4" value="Region_Month_DocumentType"> B) Region_Month_DocumentType</div>
+            <div class="radio-item"><input type="radio" name="q4" value="FocalPerson_Region_Year"> C) FocalPerson_Region_Year</div>
+        </div>
+
+        <div class="card">
+            <label>5. Field and monitoring hub reports must be submitted formally within how many days of a site visit?</label>
+            <input type="text" id="q5_answer" required placeholder="e.g., 5 days">
+        </div>
+
+        <div class="section-header">Section B: Practical Portfolio Submission</div>
+        <div class="alert">
+            <strong>📋 Required Practical Tasks:</strong><br>
+            1. Create a dedicated folder in your Google Drive named: <code>[Your Name]_[Your Region]_YiW</code>.<br>
+            2. Inside it, upload a <strong>Field Monitoring Report</strong> from a center visit and an Excel sheet detailing your <strong>Hub Budget Framework</strong>.<br>
+            3. Adjust the folder sharing permissions to <strong>"Anyone with link can view"</strong>, copy the address, and paste it below.
+        </div>
+        
+        <div>
+            <label>Google Drive Shared Folder URL Link</label>
+            <input type="url" id="drive_url" required placeholder="https://drive.google.com/drive/folders/...">
+        </div>
+
+        <div style="margin-top:15px;">
+            <label>Operational Notes / Comments (Optional)</label>
+            <textarea id="personnel_comments" rows="3" placeholder="Drop any descriptive field context or ongoing issues here..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit Secure Evaluation Report</button>
+    </form>
+</div>
+
+<script>
+    // PASTE YOUR GOOGLE APPS SCRIPT WEB APP EXTENSION LINK HERE
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyVQZafjmceVyDNuv57C5sP9mquZPFpzShxK8hAMwFhaTJurxNG0xgf_MgzvgR-4Gtg/exec";
+
+    document.getElementById('evaluationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = 'Transmitting Data...';
+        btn.disabled = true;
+
+        const payload = {
+            personnel_name: document.getElementById('personnel_name').value,
+            personnel_email: document.getElementById('personnel_email').value,
+            assigned_region: document.getElementById('assigned_region').value,
+            q1_answer: document.querySelector('input[name="q1"]:checked')?.value,
+            q2_answer: document.querySelector('input[name="q2"]:checked')?.value,
+            q3_answer: document.querySelector('input[name="q3"]:checked')?.value,
+            q4_answer: document.querySelector('input[name="q4"]:checked')?.value,
+            q5_answer: document.getElementById('q5_answer').value,
+            drive_url: document.getElementById('drive_url').value,
+            personnel_comments: document.getElementById('personnel_comments').value
+        };
+
+        // Forward structural JSON straight to Google Apps Script Web App Engine
+        fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Bypasses CORS variations cleanly for simple web forms
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(() => {
+            alert('Success! Your data has been recorded, scored, and emailed to the SE Ghana administration.');
+            document.getElementById('evaluationForm').reset();
+            btn.innerText = 'Submit Secure Evaluation Report';
+            btn.disabled = false;
+        })
+        .catch(error => {
+            alert('Submission handling encounter: ' + error);
+            btn.innerText = 'Submit Secure Evaluation Report';
+            btn.disabled = false;
+        });
+    });
+</script>
+</body>
+</html>
