@@ -296,28 +296,28 @@
         }
 
         const payload = {
-            is_timeout: isTimeoutForced,
-            personnel_name: document.getElementById('personnel_name').value,
-            personnel_email: document.getElementById('personnel_email').value,
-            assigned_region: document.getElementById('assigned_region').value,
-            q1: document.querySelector('input[name="q1"]:checked')?.value || "",
-            q2: document.querySelector('input[name="q2"]:checked')?.value || "",
-            q3: document.querySelector('input[name="q3"]:checked')?.value || "",
-            q4: document.querySelector('input[name="q4"]:checked')?.value || "",
-            q5: document.querySelector('input[name="q5"]:checked')?.value || "",
-            q6: document.querySelector('input[name="q6"]:checked')?.value || "",
-            q7: document.querySelector('input[name="q7"]:checked')?.value || "",
-            q8: document.querySelector('input[name="q8"]:checked')?.value || "",
-            q9: document.querySelector('input[name="q9"]:checked')?.value || "",
-            q10: document.querySelector('input[name="q10"]:checked')?.value || "",
-            q11: document.querySelector('input[name="q11"]:checked')?.value || "",
-            q12: document.querySelector('input[name="q12"]:checked')?.value || "",
-            q13: document.querySelector('input[name="q13"]:checked')?.value || "",
-            q14_answer: document.getElementById('q14_answer').value || "",
-            q15_answer: document.getElementById('q15_answer').value || "",
-            drive_url: document.getElementById('drive_url').value || "",
-            personnel_comments: document.getElementById('personnel_comments').value || ""
-        };
+    is_timeout: isTimeoutForced,
+    personnel_name: document.getElementById('personnel_name').value || "Unknown Candidate",
+    personnel_email: document.getElementById('personnel_email').value || "no-reply@seghana.net",
+    assigned_region: document.getElementById('assigned_region').value || "Unspecified Region",
+    q1: document.querySelector('input[name="q1"]:checked')?.value || "",
+    q2: document.querySelector('input[name="q2"]:checked')?.value || "",
+    q3: document.querySelector('input[name="q3"]:checked')?.value || "",
+    q4: document.querySelector('input[name="q4"]:checked')?.value || "",
+    q5: document.querySelector('input[name="q5"]:checked')?.value || "",
+    q6: document.querySelector('input[name="q6"]:checked')?.value || "",
+    q7: document.querySelector('input[name="q7"]:checked')?.value || "",
+    q8: document.querySelector('input[name="q8"]:checked')?.value || "",
+    q9: document.querySelector('input[name="q9"]:checked')?.value || "",
+    q10: document.querySelector('input[name="q10"]:checked')?.value || "",
+    q11: document.querySelector('input[name="q11"]:checked')?.value || "",
+    q12: document.querySelector('input[name="q12"]:checked')?.value || "",
+    q13: document.querySelector('input[name="q13"]:checked')?.value || "",
+    q14_answer: document.getElementById('q14_answer').value || "",
+    q15_answer: document.getElementById('q15_answer').value || "",
+    drive_url: document.getElementById('drive_url').value || "",
+    personnel_comments: document.getElementById('personnel_comments').value || ""
+};
 
         fetch(APPS_SCRIPT_URL, {
             method: 'POST',
